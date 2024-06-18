@@ -1,0 +1,27 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "title": "Root Schema",
+    "type": "object",
+    "default": {},
+    "required": [
+        "title",
+        "chords"
+    ],
+    "properties": {
+        "title": {
+            "title": "The title Schema",
+            "type": "string",
+            "default": ""
+        },
+        "chords": {
+            "title": "The chords Schema",
+            "type": "array",
+            "default": [],
+            "items": {
+                "title": "A Schema",
+                "type": "string"
+            }
+        }
+    }
+}

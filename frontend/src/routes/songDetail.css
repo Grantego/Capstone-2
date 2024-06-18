@@ -1,0 +1,45 @@
+.chord-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+}
+
+.chord {
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    width: 8vw;
+    height: 5vw;
+    font-size:calc(.9% + 2vw);
+    border-right: 1px solid black;
+}
+
+.chord-chart {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+    z-index: 10;
+}
+
+.chord:hover .chord-chart {
+    display: block;
+}
+
+.chord-chart img {
+    max-width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://example.com/userAuth.json",
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 10
+        
+      },
+      "spelling": {
+        "type": "string",
+        "minLength": 5,
+        "maxLength": 20
+      },
+      "chordChart": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": false,
+    "required": [
+      "name",
+      "spelling",
+      "chordChart"
+    ]
+  }
+  
