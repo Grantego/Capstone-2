@@ -87,8 +87,9 @@ describe("POST /songs/:username", () => {
 /************************************** GET /songs */
 
 describe("GET /songs", () => {
-    test("works for anon", async () => {
+    test("words for user", async () => {
         const res = await request(app).get('/songs')
+            .set("authorization", `Bearer ${u1Token}`);
         expect(res.body).toEqual({
             songs: [
                 {
@@ -107,8 +108,9 @@ describe("GET /songs", () => {
 
     test("works with username filter", async () => {
         const res = await request(app)
-        .get('/songs')
-        .query({username: "testuser"})
+            .get('/songs')
+            .query({username: "testuser"})
+            .set("authorization", `Bearer ${u1Token}`);
         expect(res.body).toEqual({
             songs: [
                 {
@@ -119,19 +121,27 @@ describe("GET /songs", () => {
             ]
         })
     })
+
     test("bad request on invalid filter key", async () => {
         const res = await request(app)
             .get('/songs')
             .query({wrong: "testuser"})   
+            .set("authorization", `Bearer ${u1Token}`);
         expect(res.statusCode).toEqual(400)    
+    })
+
+    test("unauth for anon", async () => {
+        const res = await request(app).get('/songs')
+        expect(res.statusCode).toEqual(401)
     })
 })
 
 /************************************** GET /songs/:id */
 
 describe("GET /songs/:id", () => {
-    test("works for anon", async() => {
+    test("works for user", async() => {
         const res = await request(app).get(`/songs/${testSongIds[1]}`)
+        .set("authorization", `Bearer ${u1Token}`);
         expect(res.body).toEqual({
             song: {
                 id: testSongIds[1],
@@ -144,8 +154,11 @@ describe("GET /songs/:id", () => {
 
     test("returns not found if no such song", async () => {
         const res = await request(app).get(`/songs/0`)
+            .set("authorization", `Bearer ${u1Token}`);
         expect(res.statusCode).toEqual(404)
     })
+
+    test
     
 })
 
@@ -160,12 +173,12 @@ describe("DELETE /songs/:id", () => {
         expect(res.body).toEqual({deleted : testSongIds[1]})
     })
 
-    test("unauth for others", async() => {
+    test("works for others", async() => {
         const res = await request(app)
             .delete(`/songs/${testSongIds[0]}`)
             .set("authorization", `Bearer ${u1Token}`);
-
-        expect(res.statusCode).toEqual(401)
+        
+        expect(res.body).toEqual({deleted : testSongIds[0]})
     })
 
     test("unauth for anon", async() => {

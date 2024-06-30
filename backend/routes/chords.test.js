@@ -115,7 +115,7 @@ describe("GET /chords/:name", () => {
     })
 
     test("returns not found if invalid name", async () => {
-        const res = await request(app).get("/chords/Z")
+        const res = await request(app).get("/chords/Z").set("authorization", `Bearer ${u1Token}`);
         expect(res.statusCode).toEqual(404)
     })
     test("unauth for anon", async() => {

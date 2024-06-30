@@ -27,8 +27,6 @@ export async function action({request}) {
 const LoginForm = () => { 
     const errors = useActionData()
 
-    let navigate = useNavigate()
-
     return (
         <>
             <NavBar/>
@@ -43,6 +41,7 @@ const LoginForm = () => {
                         name="username" 
                         id="username"
                         autoComplete="username"
+                        placeholder="enter username"
                         required/>
                     <Label htmlFor="password">Password:</Label>
                     <Input 
@@ -50,10 +49,11 @@ const LoginForm = () => {
                         name="password" 
                         id="password"
                         autoComplete="current-password"
+                        placeholder="enter password"
                         required/>
                 </FormGroup>
-                    <Button type="button" onClick={() => navigate(-1)}>Cancel</Button>
-                    <Button type="submit">Login</Button>
+                    <Button type="button" href="/">Cancel</Button>
+                    <Button id="login-btn" type="submit">Login</Button>
             </Form>
             </div>
         </>

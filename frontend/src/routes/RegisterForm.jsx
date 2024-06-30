@@ -81,8 +81,8 @@ const RegisterForm = () => {
                         required/>
                         {errors?.email && <span>{errors.email}</span>}
                 </FormGroup>
-                    <Button type="button" onClick={() => navigate(-1)}>Cancel</Button>
-                    <Button type="submit">Register</Button>
+                    <Button type="button" href="/">Cancel</Button>
+                    <Button id="register-btn" type="submit">Register</Button>
             </Form>
             </div>
         </>

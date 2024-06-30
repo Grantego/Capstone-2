@@ -7,6 +7,7 @@ import { Button } from "reactstrap"
 import "./songs.css"
 
 export async function loader({params}) {
+    if (localStorage.getItem('username') !== params.username) throw new Error("not authorized to view this page")
     let res = await SpellerApi.getUserSongs(params.username)
     return res
 }
@@ -21,8 +22,8 @@ const SongMain = () => {
         <div id="pagediv">
             <div id="sidebar">
             <div>
-                <h5><a href={`/${localStorage.getItem("username")}`}>Song Dashboard</a></h5>
-                <Button href={`/${localStorage.getItem("username")}/new`}>New</Button>
+                <h5><a id="song-header" href={`/${localStorage.getItem("username")}`}>My Songs</a></h5>
+                <Button id="new-song-btn" href={`/${localStorage.getItem("username")}/new`}>New</Button>
 
             </div>
             <nav>

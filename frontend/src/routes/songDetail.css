@@ -1,8 +1,12 @@
 .chord-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
     margin-top: 50px;
+}
+
+.chord-list div {
+    font-size: 4vw;
 }
 
 h1, h2, h3 {
@@ -17,10 +21,11 @@ form {
     text-align: center;
     position: relative;
     display: inline-block;
-    width: 8vw;
-    height: 5vw;
-    font-size:calc(.9% + 2vw);
-    border-right: 1px solid black;
+    width: 15vw;
+    height: 8vw;
+    margin-bottom: 20px;
+    font-size: 2vw;
+    border-right: 3px solid black;
 }
 
 .chord-chart {
@@ -34,6 +39,7 @@ form {
 }
 
 .chord:hover .chord-chart {
+    background-color: rgb(240, 234, 234);
     display: block;
 }
 
@@ -43,3 +49,4 @@ form {
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+

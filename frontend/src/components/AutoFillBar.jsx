@@ -8,7 +8,7 @@ export async function action({request}) {
     let formData = await request.formData()
     const name = formData.get("name")
     console.log(name)
-    return redirect(`${name}`)
+    return redirect(`${encodeURIComponent(name)}`)
   }
 
 const AutoFillBar = ({chords}) => {
@@ -35,7 +35,7 @@ const AutoFillBar = ({chords}) => {
             </Form>
             <ListGroup>
                 {autofillChords.length !== chords.length && autofillChords.map(chord => (
-                <ListGroupItem action href={`/chords/${chord}`} tag="a" key={chord}>
+                <ListGroupItem action href={`/chords/${encodeURIComponent(chord)}`} tag="a" key={chord}>
                     {chord}
                 </ListGroupItem>
                 ))}

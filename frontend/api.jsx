@@ -67,19 +67,18 @@ class SpellerApi {
     let res = await this.request(`songs?username=${username}`)
     return res
   }
-
+//adds new song
   static async addSong(data, username) {
     let res = await this.request(`songs/${username}`, data, "POST")
     return res
   }
-
+//gets details on a specific song
   static async getSongDetails(id) {
     let res = await this.request(`songs/${id}`)
     return res
   }
-
+ //deletes song
   static async deleteSong(id) {
-    console.log(SpellerApi.token)
     let res = await this.request(`songs/${id}`, {}, 'delete')
     return res
   }

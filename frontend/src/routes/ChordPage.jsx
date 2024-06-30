@@ -17,7 +17,7 @@ const ChordPage = () => {
         <>
             <NavBar/>
             <AutoFillBar chords={chords.map(chord => chord.name)}/>
-            <div id="details"><Outlet/></div>
+            <div id="chord-details"><Outlet/></div>
         </>
     )
 }

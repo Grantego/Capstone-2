@@ -68,7 +68,8 @@ router.get("/", ensureLoggedIn, async function(req,res,next) {
 */
 router.get("/:name", ensureLoggedIn, async function(req,res,next) {
     try {  
-        const chord = await Chord.get(req.params.name)
+        let name = decodeURIComponent(req.params.name)
+        const chord = await Chord.get(name)
         return res.json({chord})
     } catch(e) {
         next(e)
@@ -90,7 +91,8 @@ router.patch("/:name", ensureAdmin, async function(req,res,next) {
             const errs = validator.errors.map(e => e.stack)
             throw new BadRequestError(errs)
         }
-        const chord = await Chord.update(req.params.name ,req.body)
+        let name = decodeURIComponent(req.params.name)
+        const chord = await Chord.update(name ,req.body)
         return res.json({chord})
     }catch(e) {
         next(e)
@@ -106,7 +108,8 @@ router.patch("/:name", ensureAdmin, async function(req,res,next) {
 
 router.delete("/:name", ensureAdmin, async function(req,res,next) {
     try {
-        await Chord.remove(req.params.name)
+        let name = decodeURIComponent(req.params.name)
+        await Chord.remove(name)
         return res.json({ deleted: req.params.name})
     } catch(e) {
         next(e)

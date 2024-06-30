@@ -86,9 +86,15 @@ const NewSong = () => {
                         </ListGroupItem>
                         ))}
                     </ListGroup>
-                <Button type="submit">Submit</Button>
+                <Button type="submit" id="submit-btn">Submit</Button>
             </Form>
-            {newChords.map((chord, i) => <h3 key={`${chord}chord${i}`}>{chord}</h3>)}
+            <div className="chord-list">
+            {newChords.map((chord, i) => (
+            <div key={`${i}${chord}`}className="chord">
+                {chord}
+            </div>                
+            ))}
+         </div>
         </>
     )
 }

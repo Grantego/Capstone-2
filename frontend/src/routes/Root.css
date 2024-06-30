@@ -1,0 +1,61 @@
+.container-div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+
+#root {
+    background-color: #e6a64c4b;
+}
+
+#login-btn {
+    margin-left: 20px;
+}
+
+#register-btn {
+    margin-left: 20px;
+}
+
+#chord-details {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#chord-detail-name {
+    font-size: 5vw;
+    margin-top: 5vw;
+    margin-bottom: 3vw;
+}
+
+#chord-detail-spelling {
+    font-size: 3vw;
+}
+
+#chord-chart-box {
+    display: flex;
+    width: 45vw;
+    height: 50vw;
+    margin-top: 10rem;
+    padding: 20px;
+    justify-content: center;
+    background-color: rgb(238, 226, 210);
+    box-shadow: 2px 2px 5px black;
+    border: 1vw solid #e6a64c;
+    border-radius: 8px;
+}
+
+#chord-detail-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+a {
+    color: black; /* Set the link color to black */
+    text-decoration: none; /* Remove underline */
+}
