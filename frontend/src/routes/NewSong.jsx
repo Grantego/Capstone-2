@@ -62,7 +62,8 @@ const NewSong = () => {
                         <Input type="text"
                            placeholder="Title"
                            name="title"
-                           id="title"/>
+                           id="title"
+                           required/>
                     </InputGroup>
                     <InputGroup>
                     <Input type="text"

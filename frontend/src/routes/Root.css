@@ -59,3 +59,24 @@ a {
     color: black; /* Set the link color to black */
     text-decoration: none; /* Remove underline */
 }
+
+
+@media (max-width: 600px) {
+
+    #chord-detail-name {
+        font-size: 10vw;
+        margin-top: 5vw;
+        margin-bottom: 3vw;
+    }
+    
+    #chord-detail-spelling {
+        font-size: 6vw;
+    }
+    
+    #chord-chart-box {
+        margin-top: 20vw;
+        width: 60vw;
+        height: 70vw;
+    }
+
+  }

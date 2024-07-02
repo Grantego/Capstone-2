@@ -43,14 +43,13 @@ export async function action({request}) {
 
 const RegisterForm = () => {
 
-    let navigate = useNavigate()
     const errors = useActionData()
     return (
         <>
         <NavBar/>
         <div className="body-container">
             <h1>Register</h1>
-            <Form method="post">
+            <Form id="register-form" method="post">
                 <FormGroup>
                     <Label htmlFor="username">Username:</Label>
                     <Input 

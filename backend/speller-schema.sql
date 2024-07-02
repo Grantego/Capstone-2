@@ -1,13 +1,13 @@
 CREATE TABLE chords (
     name VARCHAR(10) PRIMARY KEY,
     spelling VARCHAR NOT NULL,
-    chord_chart TEXT
+    chord_chart VARCHAR
 );
 
 CREATE TABLE users (
     username VARCHAR(25) PRIMARY KEY,
-    password TEXT NOT NULL,
-    email TEXT NOT NULL,
+    password VARCHAR NOT NULL,
+    email VARCHAR NOT NULL,
     is_admin BOOLEAN NOT NULL DEFAULT FALSE
 );
 
