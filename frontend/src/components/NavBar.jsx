@@ -1,19 +1,17 @@
 import React, {useState} from "react";
 import "./NavBar.css"
-import {NavLink, useNavigate} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import SpellerApi from "../../api";
 import {Navbar, Nav, NavItem, NavbarBrand, Collapse, NavbarToggler} from "reactstrap"
 
 
 const NavBar = () => {
     let token = localStorage.getItem("token")
-    let navigate = useNavigate()
     const [collapsed, setCollapsed] = useState(true)
 
     const toggleNavbar = () => setCollapsed(!collapsed)
     const logout = () => {
         SpellerApi.logout()
-        navigate('/login')
     }
 
     if (token) {

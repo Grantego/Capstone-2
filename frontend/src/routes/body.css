@@ -1,9 +1,12 @@
 .body-container {
-    margin: 0;
+    margin-left: 5vw;
+    margin-right: 5vw;
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
+    padding: 20px;
+    width: 95vw;
 }
 
 .mb-3 {

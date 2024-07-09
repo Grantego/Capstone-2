@@ -6,6 +6,10 @@
     margin-top: 200px;
 }
 
+.mb-3 {
+    width: 95vw !important;
+}
+
 
 #root {
     background-color: #e6a64c4b;
@@ -19,6 +23,7 @@
     margin-left: 20px;
 }
 
+/* Chord page CSS */
 #chord-details {
     height: 100%;
     width: 100%;
@@ -59,6 +64,13 @@ a {
     color: black; /* Set the link color to black */
     text-decoration: none; /* Remove underline */
 }
+
+#autofill-results {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+}
+
 
 
 @media (max-width: 600px) {

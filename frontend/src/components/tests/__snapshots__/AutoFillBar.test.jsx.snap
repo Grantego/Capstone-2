@@ -1,0 +1,34 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`AutoFillBar component > matches snapshot 1`] = `
+<DocumentFragment>
+  <form
+    action="/"
+    method="post"
+  >
+    <div
+      class="input-group"
+    >
+      <input
+        aria-label="chord-input"
+        class="form-control"
+        id="name"
+        name="name"
+        placeholder="chord name ex: C, Cm, Cmaj7"
+        type="text"
+        value=""
+      />
+      <button
+        class="btn btn-secondary"
+        type="submit"
+      >
+        Search
+      </button>
+    </div>
+  </form>
+  <ul
+    class="list-group"
+    id="autofill-results"
+  />
+</DocumentFragment>
+`;

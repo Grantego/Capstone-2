@@ -12,7 +12,6 @@ export async function action({request}) {
         const formData = await request.formData();
         const data = Object.fromEntries(formData);
         const res = await SpellerApi.login(data);
-        console.log(res)
         SpellerApi.token = res.token
         window.localStorage.setItem("username", data.username);
         window.localStorage.setItem("token", res.token);

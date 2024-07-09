@@ -1,9 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Root from './Root';
+import Root from '../root';
+import { BrowserRouter } from 'react-router-dom';
 import { describe, it, beforeEach, expect } from 'vitest';
-
-// Testing of the front end is currently not working. Needs debugging.
 
 describe('Root component', () => {
   beforeEach(() => {
@@ -11,17 +10,31 @@ describe('Root component', () => {
     localStorage.clear();
   });
 
+  it("matches snapshot", function() {
+    const {asFragment} = render(<BrowserRouter><Root/></BrowserRouter>)
+    expect(asFragment()).toMatchSnapshot();
+  })
+
+  it("renders without crashing", () => {
+    render(<BrowserRouter><Root/></BrowserRouter>)
+  })
+
   it('displays "Chord Assistant" when user is not logged in', () => {
-    render(<Root />);
+    render(<BrowserRouter><Root/></BrowserRouter>);
     expect(screen.getByText(/chord assistant/i)).toBeInTheDocument();
   });
+
+  it('displays navbar', () => {
+    render(<BrowserRouter><Root/></BrowserRouter>)
+    expect(screen.getByText("Chord Helper")).toBeInTheDocument()
+  })
 
   it('displays "Welcome back, [username]" when user is logged in', () => {
     const username = 'testuser';
     localStorage.setItem('token', 'sampletoken');
     localStorage.setItem('username', username);
     
-    render(<Root />);
+    render(<BrowserRouter><Root /></BrowserRouter>);
     expect(screen.getByText(`Welcome back, ${username}`)).toBeInTheDocument();
   });
 });
