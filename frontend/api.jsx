@@ -31,19 +31,20 @@ class SpellerApi {
   // Individual API routes
 
   /** Get details on a chord by name. */
-
+  // returns  {chord : {name, spelling, chordChart}}
   static async getChord(name) {
     let res = await this.request(`chords/${name}`);
-    return res.chord;
+    return res;
   }
 
-  //returns list of all chords in an array, with each as objects
+  // list of all chords in an array, with each as objects
+  //returns {chords : [{name, spelling, chordChart}]}
   static async getAllChords() {
     let res = await this.request('chords')
-    return res.chords
+    return res
   }
   // Handles login
-
+  // returns token
   static async login(data) {
     let res = await this.request('auth/token', data, "POST");
     return res
@@ -57,27 +58,31 @@ class SpellerApi {
   }
 
   // Registers new user. Data is taken in as an object of form data fields
+  // returns token
   static async register(data) {
     let res = await this.request(`auth/register`, data, "POST")
     return res
   }
   
   // gets a list of all songs by a specific user
+  // { songs: [ { id, title, username}, ...] }
   static async getUserSongs(username) {
     let res = await this.request(`songs?username=${username}`)
     return res
   }
-//adds new song
+// adds new song
+// Returns {song: {id: 1, title: "New Song", username: "user", chords: ["A", "E", "A", ...]}}
   static async addSong(data, username) {
     let res = await this.request(`songs/${username}`, data, "POST")
     return res
   }
-//gets details on a specific song
+// gets details on a specific song
+// Returns {song: {id: 1, title: "New Song", username: "user", chords: ["A", "E", "A", ...]}}
   static async getSongDetails(id) {
     let res = await this.request(`songs/${id}`)
     return res
   }
- //deletes song
+ // deletes song
   static async deleteSong(id) {
     let res = await this.request(`songs/${id}`, {}, 'delete')
     return res

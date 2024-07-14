@@ -21,7 +21,7 @@ export async function action({request}) {
 }
 
 const NewSong = () => {
-    const chords = useLoaderData()
+    const {chords} = useLoaderData()
     const chordNames = chords.map(chord => chord.name)
     const [newChords, setNewChords] = useState([])
     const [autofillChords, setAutofillChords] = useState([])

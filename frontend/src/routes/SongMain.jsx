@@ -1,18 +1,16 @@
 import React from "react"
 import NavBar from "../components/NavBar"
 import SpellerApi from "../../api"
-import { Form, Outlet } from "react-router-dom"
+import { Form, Outlet, NavLink } from "react-router-dom"
 import { useLoaderData } from "react-router"
 import { Button } from "reactstrap"
-import "./songs.css"
+import "./SongMain.css"
 
 export async function loader({params}) {
     if (localStorage.getItem('username') !== params.username) throw new Error("not authorized to view this page")
     let res = await SpellerApi.getUserSongs(params.username)
     return res
 }
-
-//NEED TO MAKE A LANDING PAGE TO VIEW THE SONG AS WELL AS AN EDIT PAGE.  EDIT WILL BE DELETE, RESUBMIT.
 
 const SongMain = () => {
  const {songs} = useLoaderData()

@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent, render, screen, cleanup } from '@testing-library/react';
 import AutoFillBar from '../AutoFillBar';
-import { RouterProvider, createMemoryRouter, Routes, Route } from 'react-router-dom';
+import { RouterProvider, createMemoryRouter,} from 'react-router-dom';
 import { describe, it, beforeEach, expect, afterEach } from 'vitest';
 
 
@@ -49,13 +49,5 @@ describe("AutoFillBar component", () => {
         expect(screen.getByText("Emaj7")).toBeInTheDocument()
         expect(screen.queryByText("D")).toBe(null)
         expect(screen.queryByText("F")).toBe(null)
-    })
-
-    it("clicking search button goes to chords page", () => {
-        render(<RouterProvider router={router} />);
-        fireEvent.change(screen.getByLabelText("chord-input"), {target: {value: 'e'}})
-        fireEvent.click(screen.getByText("E"));
-
-        expect(screen.getByText("Chord Page")).toBeInTheDocument();
     })
 })

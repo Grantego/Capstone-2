@@ -1,6 +1,7 @@
 import React from "react";
 import { useLoaderData } from "react-router";
 import SpellerApi from "../../api";
+import "./ChordDetails.css"
 
 export async function loader({params}) {
   let res = await SpellerApi.getChord(encodeURIComponent(params.name))
@@ -8,7 +9,7 @@ export async function loader({params}) {
 }
 
 const ChordDetails = () => {
-  const chord = useLoaderData()
+  const {chord} = useLoaderData()
     return (
         <>
         <h1 id="chord-detail-name">{chord.name}</h1>

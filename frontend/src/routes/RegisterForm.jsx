@@ -56,6 +56,7 @@ const RegisterForm = () => {
                         type="text" 
                         name="username" 
                         id="username"
+                        placeholder="choose username"
                         required
                         />
                     {errors?.username && <span>{errors.username}</span>}
@@ -68,7 +69,8 @@ const RegisterForm = () => {
                         id="password"
                         autoComplete="
                         new-password"
-                        required/>
+                        required
+                        placeholder="enter password"/>
                         {errors?.password && <span>{errors.password}</span>}
                 </FormGroup>
                 <FormGroup>
@@ -77,7 +79,8 @@ const RegisterForm = () => {
                         type="text"
                         name="email" 
                         id="email"
-                        required/>
+                        required
+                        placeholder="enter email"/>
                         {errors?.email && <span>{errors.email}</span>}
                 </FormGroup>
                     <Button type="button" href="/">Cancel</Button>

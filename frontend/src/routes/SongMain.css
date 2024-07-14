@@ -1,0 +1,178 @@
+html {
+    box-sizing: border-box;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    line-height: 1.5;
+    color: #121212;
+  }
+
+  #new-song-btn {
+    margin-left: 1vw;
+  }
+
+  #song-header {
+    text-decoration: none;
+    color: black
+  }
+
+  #song-header:hover {  
+    font-weight: bold; 
+  }
+  
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  
+  #root {
+    height: 100%;
+    width: 100%;
+  }
+  
+  #pagediv {
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+  #sidebar {
+    width: 20vw;
+    background-color: #f7f7f7;
+    border-right: solid 1px #e3e3e3;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #sidebar > * {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  #sidebar h1 {
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 1rem 2rem;
+    border-top: 1px solid #e3e3e3;
+    order: 1;
+    line-height: 1;
+  }
+
+  #sidebar h5 {
+    font-size: 2vw;
+  }
+
+  #new-song-btn {
+    font-size: 1.5vw;
+    width: 5vw;
+    height: 3vw;
+    display: flex;
+    align-items: center;
+  }
+  
+  #sidebar > div {
+    display: flex;
+    background-color: #e6a64c8a;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e3e3e3;
+  }
+  
+  #sidebar nav {
+    flex: 1;
+    overflow: auto;
+    padding-top: 1rem;
+    padding-left: .5vw;
+    padding-right: .5vw;
+  }
+  
+  #sidebar nav a span {
+    float: right;
+    color: #eeb004;
+  }
+  #sidebar nav a.active span {
+    color: inherit;
+  }
+  
+  i {
+    color: #818181;
+  }
+  #sidebar nav .active i {
+    color: inherit;
+  }
+  
+  #sidebar ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  #sidebar li {
+    margin: 0.25rem 0;
+    font-size: 2vw;
+  }
+  
+  #sidebar nav a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    white-space: pre;
+    padding: 0.5rem;
+    border-radius: 8px;
+    color: inherit;
+    text-decoration: none;
+    gap: 1rem;
+  }
+  
+  #sidebar nav a:hover {
+    background: #e3e3e3;
+  }
+
+  #detail {
+    flex: 1;
+    padding: 2rem 4rem;
+    width: 100%;
+  }
+
+
+  #error-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  @media (max-width: 600px) {
+    #sidebar li {
+      margin: 0.25rem 0;
+      font-size: 3vw;
+    }
+
+    #sidebar h5 {
+      font-size: 3vw
+    }
+  }
+  

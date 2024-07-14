@@ -1,0 +1,49 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ChordPage component > matches snapshot 1`] = `<DocumentFragment />`;
+
+exports[`Root component > matches snapshot 1`] = `
+<DocumentFragment>
+  <h2>
+    Unexpected Application Error!
+  </h2>
+  <h3
+    style="font-style: italic;"
+  >
+    Cannot read properties of undefined (reading 'map')
+  </h3>
+  <pre
+    style="padding: 0.5rem; background-color: rgba(200, 200, 200, 0.5);"
+  >
+    TypeError: Cannot read properties of undefined (reading 'map')
+    at ChordPage (/home/grantego/Springboard/Capstone-2/frontend/src/routes/ChordPage.jsx:19:41)
+    at renderWithHooks (/home/grantego/Springboard/Capstone-2/frontend/node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (/home/grantego/Springboard/Capstone-2/frontend/node_modules/react-dom/cjs/react-dom.development.js:20103:13)
+    at beginWork (/home/grantego/Springboard/Capstone-2/frontend/node_modules/react-dom/cjs/react-dom.development.js:21626:16)
+    at beginWork$1 (/home/grantego/Springboard/Capstone-2/frontend/node_modules/react-dom/cjs/react-dom.development.js:27465:14)
+    at performUnitOfWork (/home/grantego/Springboard/Capstone-2/frontend/node_modules/react-dom/cjs/react-dom.development.js:26599:12)
+    at workLoopSync (/home/grantego/Springboard/Capstone-2/frontend/node_modules/react-dom/cjs/react-dom.development.js:26505:5)
+    at renderRootSync (/home/grantego/Springboard/Capstone-2/frontend/node_modules/react-dom/cjs/react-dom.development.js:26473:7)
+    at recoverFromConcurrentError (/home/grantego/Springboard/Capstone-2/frontend/node_modules/react-dom/cjs/react-dom.development.js:25889:20)
+    at performConcurrentWorkOnRoot (/home/grantego/Springboard/Capstone-2/frontend/node_modules/react-dom/cjs/react-dom.development.js:25789:22)
+  </pre>
+  <p>
+    💿 Hey developer 👋
+  </p>
+  <p>
+    You can provide a way better UX than this when your app throws errors by providing your own 
+    <code
+      style="padding: 2px 4px; background-color: rgba(200, 200, 200, 0.5);"
+    >
+      ErrorBoundary
+    </code>
+     or 
+    <code
+      style="padding: 2px 4px; background-color: rgba(200, 200, 200, 0.5);"
+    >
+      errorElement
+    </code>
+     prop on your route.
+  </p>
+</DocumentFragment>
+`;

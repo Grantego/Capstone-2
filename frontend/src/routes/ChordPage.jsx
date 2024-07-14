@@ -12,7 +12,7 @@ export async function loader() {
 }
 
 const ChordPage = () => {
-    const chords = useLoaderData()
+    const {chords} = useLoaderData()
     return (
         <>
             <NavBar/>
