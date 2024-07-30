@@ -22,6 +22,10 @@ app.use(express.json());
 app.use(morgan("tiny"));
 app.use(authenticateJWT);
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the Speller Backend!');
+});
+
 app.use("/auth", authRoutes);
 app.use("/chords", chordsRoutes);
 app.use("/users", usersRoutes);
