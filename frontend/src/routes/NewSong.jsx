@@ -6,11 +6,9 @@ import SpellerApi from "../../api"
 
 
 export async function action({request}) {
-    console.log("running")
     let formData = await request.formData()
     const title = formData.get("title")
     const newChords = JSON.parse(formData.get("newChords"));
-    console.log(newChords)
     const data = {
         title: title,
         chords: newChords

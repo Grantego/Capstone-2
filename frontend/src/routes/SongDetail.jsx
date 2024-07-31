@@ -14,12 +14,10 @@ export async function action({request}) {
 }
 export async function loader({params}) {
     const res = await SpellerApi.getSongDetails(params.id)
-    console.log(res)
     res.song.chords = await Promise.all(res.song.chords.map(async c => {
         const {chord} = await SpellerApi.getChord(c)
         return chord
     }))
-    console.log(res)
     return res
 }
 

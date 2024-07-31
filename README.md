@@ -1,5 +1,5 @@
 # Chord Finder / Song Helper
-## Link to demo: pending
+## Link to demo: https://chord-speller-backend.onrender.com (this may take some time to load)
 ### Get help on common fingerings and spellings for 170 different chords on guitar, along with a very basic song maker.
 
 This is a project I put together as the final Capstone for the Springboard Full-Stack Developer Program.
